@@ -3,64 +3,388 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repuestos A/C Automotriz</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <title>VConta IA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- CDN de Fabric.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
+    
+    <!-- Manifest y tema (dejamos una sola ruta limpia) -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+<script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-    <header>
-        <div class="logo">‚ùÑÔ∏è AutoAire Repuestos</div>
-        <nav>
-            <input type="text" placeholder="Buscar repuesto (ej. Compresor)...">
-            <button class="cart-btn">üõí Carrito (0)</button>
-        </nav>
+        const firebaseConfig = {
+          apiKey: "AIzaSyD2oUx9p0-sJxDwWkRvsktC4peYmtyU0B4",
+          authDomain: "vcontaia.firebaseapp.com",
+          projectId: "vcontaia",
+          storageBucket: "vcontaia.firebasestorage.app",
+          messagingSenderId: "606065050315",
+          appId: "1:606065050315:web:7f66892a8de7cfe18c514e"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        console.log("Firebase conectado exitosamente en V-Conta Pro AI ??");
+        window.db = db;
+    </script>
+    <style>
+        body {
+            background-color: #0b0f19;
+            background-image: radial-gradient(circle at 50% 30%, rgba(30, 58, 138, 0.3) 0%, rgba(11, 15, 25, 0.95) 75%);
+        }
+    </style>
+</head>
+<body class="text-slate-100 min-h-screen font-sans flex flex-col justify-between p-4 selection:bg-indigo-500 selection:text-white">
+<button id="btnInstalar" style="display: none; padding: 12px 24px; background-color: #007bff; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    ?? Descargar App 
+</button>
+    <!-- Barra superior minimalista -->
+    <header class="flex items-center justify-between px-6 py-4 max-w-5xl mx-auto w-full">
+        <div class="flex items-center space-x-3">
+            <div class="w-9 h-9 rounded-full bg-indigo-600/30 border border-indigo-500/40 flex items-center justify-center text-indigo-300 shadow-inner overflow-hidden p-1">
+                <!-- Cerebro ilustrado dentro del c®™rculo -->
+                <svg class="w-full h-full drop-shadow-sm" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#f43f5e" d="M368.3 118.4c-12.8-19.6-32.3-33.8-55-39.7-11.4-3-23.5-3.8-35.3-2.3-28.7 3.6-54.3 20.8-67.9 46.8-13.6-26-39.2-43.2-67.9-46.8-11.8-1.5-23.9-.7-35.3 2.3-22.7 5.9-42.2 20.1-55 39.7-12.8 19.6-18 43.8-14.3 67.5 3.7 23.7 16.3 44.5 35.1 57.6-18.8 13.1-31.4 33.9-35.1 57.6-3.7 23.7 1.5 47.9 14.3 67.5 12.8 19.6 32.3 33.8 55 39.7 11.4 3 23.5 3.8 35.3 2.3 22.3-2.8 42.6-14.4 56.4-32.5 13.8 18.1 34.1 29.7 56.4 32.5 11.8 1.5 23.9.7 35.3-2.3 22.7-5.9 42.2-20.1 55-39.7 12.8-19.6 18-43.8 14.3-67.5-3.7-23.7-16.3-44.5-35.1-57.6 18.8-13.1 31.4-33.9 35.1-57.6 3.7-23.7-1.5-47.9-14.3-67.5z"/>
+                    <path fill="#fb7185" d="M256 123.2c-19.1 22.3-30.2 51.5-30.2 82.8 0 31.3 11.1 60.5 30.2 82.8 19.1-22.3 30.2-51.5 30.2-82.8 0-31.3-11.1-60.5-30.2-82.8z"/>
+                    <path fill="#ffffff" opacity="0.6" d="M336 144c-4 0-8 3.6-8 8s3.6 8 8 8c8.8 0 16 7.2 16 16 0 4 3.6 8 8 8s8-3.6 8-8c0-17.7-14.3-32-32-32z"/>
+                </svg>
+            </div>
+            <span class="font-semibold text-lg tracking-tight text-slate-100">VConta IA</span>
+        </div>
+        <div class="flex items-center space-x-3">
+            <!-- Selector de Modo: Texto o Imagen -->
+            <select id="modoOperacion" class="text-xs px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-indigo-300 font-medium focus:outline-none focus:border-indigo-500 shadow-sm cursor-pointer">
+                <option value="texto">Modo: Texto / Asistente</option>
+                <option value="imagen">Modo: Generador de Im®¢genes</option>
+            </select>
+            <span class="text-xs px-3 py-1 rounded-full bg-slate-900/90 border border-slate-800 text-indigo-400 font-mono shadow-sm">Stable &amp; Fast</span>
+        </div>
     </header>
 
-    <section class="filters">
-        <div class="filter-group">
-    <select id="select-marca">
-        <option value="">Selecciona Marca</option>
-        <option value="toyota">Toyota</option>
-        <option value="ford">Ford</option>
-        <option value="chevrolet">Chevrolet</option>
-    </select>
-    
-    <select id="select-modelo">
-        <option value="">Selecciona Modelo</option>
-    </select>
-    
-    <button class="search-btn" id="btn-buscar">Filtrar</button>
-</div>
-    </section>
-
-    <main class="catalog"id="contenedor-productos"></main>
+    <!-- Contenedor central -->
+    <main class="max-w-3xl mx-auto w-full flex-grow flex flex-col items-center justify-center px-4 py-6">
         
+        <!-- Saludo -->
+        <h1 class="text-3xl md:text-5xl font-light text-slate-100 mb-8 text-center tracking-tight">Listo cuando quieras</h1>
+
+        <!-- Barra de entrada flotante central -->
+        <div class="w-full bg-[#131826] border border-slate-800 hover:border-slate-700 transition rounded-3xl p-3 shadow-2xl flex items-center mb-6">
+            <div class="pl-3 pr-2 text-slate-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+            </div>
+            <input type="text" id="promptInput" placeholder="Escribe tu gancho comercial o descripci®Æn para imagen..." class="w-full bg-transparent border-none text-white placeholder-slate-500 focus:outline-none text-base py-2 px-2">
+            
+            <div class="flex items-center space-x-2 pr-1">
+                <button onclick="generarContenidoIA()" class="bg-indigo-600 hover:bg-indigo-500 text-white p-3 rounded-full transition flex items-center justify-center shadow-lg cursor-pointer">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+            </div>
         </div>
 
-        <div class="product-card">
-            <img src="https://via.placeholder.com/150" alt="Evaporador">
-            <div class="card-body">
-                <p class="compatibility">Compatible con: Honda Civic 16-21</p>
-                <p class="price">$85.00</p>
-                <button class="add-btn">A√±adir al carrito</button>
+        <!-- Indicador de Carga con Barra de Progreso de 0 a 100% -->
+        <div id="loading" class="hidden flex-col w-full max-w-md bg-[#121722] border border-slate-800 p-4 rounded-2xl shadow-xl mb-4 space-y-2">
+            <div class="flex justify-between items-center text-xs text-indigo-300 font-mono">
+                <span id="loadingText">Procesando solicitud...</span>
+                <span id="progressPercent">0%</span>
+            </div>
+            <div class="w-full bg-slate-900 rounded-full h-2.5 overflow-hidden border border-slate-800">
+                <div id="progressBar" class="bg-indigo-600 h-2.5 rounded-full transition-all duration-200" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <!-- Consola de Resultados Interactiva -->
+        <div class="w-full bg-[#121722]/90 backdrop-blur-md p-6 rounded-2xl border border-slate-800/80 shadow-xl space-y-4">
+            
+            <!-- Tu Pregunta -->
+            <div id="preguntaContainer" class="hidden pb-3 border-b border-slate-800/50">
+                <span class="text-xs font-semibold text-indigo-400 uppercase tracking-widest block mb-1">Tu Instrucci®Æn / Prompt</span>
+                <p id="preguntaTexto" class="text-slate-100 text-base font-medium"></p>
+            </div>
+
+            <div class="flex items-center justify-between mb-3 border-b border-slate-800/50 pb-2">
+                <span class="text-xs font-semibold text-indigo-300 uppercase tracking-widest flex items-center">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping mr-2"></span> Resultado del Modelo
+                </span>
+                <span class="text-xs text-slate-500 font-mono">vconta-pro.ai</span>
+            </div>
+
+            <!-- Contenedor para texto -->
+            <div id="outputConsole" class="text-slate-300 text-sm whitespace-pre-wrap font-mono leading-relaxed min-h-[120px] flex items-center text-slate-500">
+                Esperando instrucci®Æn o semilla publicitaria...
+            </div>
+
+            <!-- Contenedor para imagen con bot®Æn de descarga integrado -->
+            <div id="imageContainer" class="hidden flex flex-col items-center justify-center py-4 space-y-4">
+                <img id="imagenResultado" class="hidden" src="" alt="Oculto">
+                
+                <!-- Lienzo para edici®Æn macro -->
+                <div class="border border-slate-700 rounded-xl shadow-2xl overflow-hidden bg-black">
+                    <canvas id="flyerCanvas" width="512" height="512"></canvas>
+                </div>
+
+                <!-- Panel de Controles para Texto -->
+                <div class="w-full bg-slate-900/90 border border-slate-800 p-3 rounded-xl flex flex-wrap gap-2 items-center justify-between">
+                    <input type="text" id="customTextInput" placeholder="Ej: ??? ?OFERTA $5.99!" class="bg-slate-950 border border-slate-700 text-white text-xs px-3 py-2 rounded-lg flex-grow focus:outline-none focus:border-indigo-500">
+                    <button onclick="agregarTextoAlFlyer()" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold px-4 py-2 rounded-lg transition cursor-pointer shadow">
+                        + A?adir Texto
+                    </button>
+                    <button onclick="eliminarObjetoSeleccionado()" class="bg-rose-600/80 hover:bg-rose-500 text-white text-xs font-semibold px-3 py-2 rounded-lg transition cursor-pointer">
+                        ??? Borrar
+                    </button>
+                </div>
+
+                <!-- Bot®Æn de Descarga Directa Macro -->
+                <button onclick="descargarFlyerMacro(event)" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold py-3 rounded-xl transition flex items-center justify-center space-x-2 shadow-lg cursor-pointer">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                    </svg>
+                    <span>Descargar Flyer Publicitario Listo</span>
+                </button>
             </div>
         </div>
     </main>
-<script src="script.js"></script>
-<div id="modal-carrito" class="modal">
-    <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <h2>Tu Carrito de Compras</h2>
-        <div id="lista-carrito-items">
-            </div>
-        <div class="modal-footer">
-            <h3>Total: $<span id="total-precio">0</span></h3>
-            <button class="checkout-btn">Finalizar Compra por WhatsApp</button>
-        </div>
-    </div>
-</div>
-<a href="https://wa.me/5804248688527" class="whatsapp-float" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-</a>
+
+    <!-- Pie de p®¢gina -->
+    <footer class="text-center text-xs text-slate-500 pb-4">
+        Rojas Vconta Pro 2026, F.P. °™ Barcelona y Lecher®™a, Anzo®¢tegui.
+    </footer>
+
+    <!-- Script principal con barra de progreso animada de 0 a 100 -->
+    <script>
+    let canvas = null;
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const inputField = document.getElementById('promptInput');
+        if (inputField) {
+            inputField.addEventListener("keydown", function(event) {
+                if (event.key === "Enter") {
+                    generarContenidoIA();
+                }
+            });
+        }
+        canvas = new fabric.Canvas('flyerCanvas');
+    });
+
+    // Funcion para animar la barra de progreso de 0 a 100%
+    function simularProgreso(duracionMs, callback) {
+        const loadingDiv = document.getElementById('loading');
+        const progressBar = document.getElementById('progressBar');
+        const progressPercent = document.getElementById('progressPercent');
+        const loadingText = document.getElementById('loadingText');
+
+        loadingDiv.classList.remove('hidden');
+        loadingDiv.classList.add('flex');
+        
+        let progreso = 0;
+        progressBar.style.width = '0%';
+        progressPercent.textContent = '0%';
+        loadingText.textContent = "Conectando con el motor de IA...";
+
+        const intervaloTiempo = 50;
+        const incremento = 100 / (duracionMs / intervaloTiempo);
+
+        const timer = setInterval(() => {
+            progreso += incremento;
+            if (progreso >= 95) {
+                progreso = 95;
+                loadingText.textContent = "Renderizando diseno final...";
+            }
+            
+            const porcentajeActual = Math.floor(progreso);
+            progressBar.style.width = porcentajeActual + '%';
+            progressPercent.textContent = porcentajeActual + '%';
+        }, intervaloTiempo);
+
+        return function finalizarProgreso() {
+            clearInterval(timer);
+            progressBar.style.width = '100%';
+            progressPercent.textContent = '100%';
+            loadingText.textContent = "!Completado con exito!";
+            
+            setTimeout(() => {
+                loadingDiv.classList.add('hidden');
+                loadingDiv.classList.remove('flex');
+            }, 400);
+            
+            if (callback) callback();
+        };
+    }
+
+    async function generarContenidoIA() {
+        const promptInput = document.getElementById('promptInput');
+        const prompt = promptInput.value.trim();
+        const consoleDiv = document.getElementById('outputConsole');
+        const imageContainer = document.getElementById('imageContainer');
+        const preguntaContainer = document.getElementById('preguntaContainer');
+        const preguntaTexto = document.getElementById('preguntaTexto');
+        const modoOperacion = document.getElementById('modoOperacion').value;
+
+        if (!prompt) {
+            alert('Por favor, introduce una semilla o descripcion valida.');
+            return;
+        }
+
+        preguntaTexto.textContent = prompt;
+        preguntaContainer.classList.remove('hidden');
+
+       const urlBackend = (window.location.hostname.includes("loca.lt") || window.location.hostname.includes("web.app")) 
+    ? 'https://vcontaiapp.loca.lt/predict' 
+    : '/predict';
+        if (modoOperacion === 'texto') {
+            consoleDiv.textContent = "";
+            consoleDiv.classList.remove('hidden', 'text-slate-500', 'text-red-400');
+            imageContainer.classList.add('hidden');
+
+            const detenerProgreso = simularProgreso(1500);
+
+           try {
+                const response = await fetch(urlBackend, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ msg: prompt })
+                });            
+               
+                const data = await response.json();
+                detenerProgreso();
+                
+                if (data.status === 'success') {
+                    consoleDiv.textContent = data.response;
+                } else {
+                    consoleDiv.textContent = "[ERROR]: " + data.message;
+                    consoleDiv.classList.add('text-red-400');
+                }
+                promptInput.value = "";
+            } catch (error) {
+                detenerProgreso();
+                consoleDiv.textContent = "[ERROR]: No se pudo conectar con el servidor a traves de Cloudflare.";
+                consoleDiv.classList.add('text-red-400');
+            }
+        } else {
+            // Modo Imagen
+            consoleDiv.classList.add('hidden');
+            imageContainer.classList.remove('hidden');
+
+            const detenerProgreso = simularProgreso(3000);
+
+            try {
+                const response = await fetch(urlBackend, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ msg: "genera una imagen de " + prompt })
+                });
+
+                const data = await response.json();
+
+                if (data.status === 'success' && data.tipo === 'imagen') {
+                    fabric.Image.fromURL(data.response, function(img) {
+                        canvas.clear();
+                        img.scaleToWidth(512);
+                        img.scaleToHeight(512);
+                        canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas));
+                        detenerProgreso();
+                    }, { crossOrigin: 'anonymous' });
+                } else {
+                    detenerProgreso();
+                    alert("Error al generar la imagen: " + (data.message || "Respuesta no valida"));
+                }
+                promptInput.value = "";
+            } catch (error) {
+                detenerProgreso();
+                alert("Error de conexion al generar la imagen.");
+            }
+        }
+    }
+
+    function agregarTextoAlFlyer() {
+        const textoInput = document.getElementById('customTextInput');
+        const textoVal = textoInput.value.trim();
+        if (!textoVal) return;
+
+        const textObj = new fabric.IText(textoVal, {
+            left: 50,
+            top: 50,
+            fill: '#ffffff',
+            fontSize: 28,
+            fontFamily: 'Arial',
+            fontWeight: 'bold',
+            stroke: '#000000',
+            strokeWidth: 2,
+            shadow: 'rgba(0,0,0,0.8) 2px 2px 4px'
+        });
+
+        canvas.add(textObj);
+        canvas.setActiveObject(textObj);
+        textoInput.value = "";
+    }
+
+    function eliminarObjetoSeleccionado() {
+        const activeObj = canvas.getActiveObject();
+        if (activeObj) {
+            canvas.remove(activeObj);
+        }
+    }
+
+    function descargarFlyerMacro(event) {
+        event.preventDefault();
+        canvas.discardActiveObject();
+        canvas.renderAll();
+
+        const dataURL = canvas.toDataURL({
+            format: 'jpeg',
+            quality: 0.95
+        });
+
+        const link = document.createElement('a');
+        link.href = dataURL;
+        link.download = 'vconta_flyer_publicitario.jpg';
+        
+        document.body.appendChild(link);
+        link.click();
+        
+        setTimeout(() => {
+            document.body.removeChild(link);
+        }, 100);
+    }
+
+    // Registrar Service Worker y gestionar la instalacion de la PWA de forma limpia
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js')
+                .then(() => console.log('Service Worker registrado con exito'))
+                .catch((err) => console.log('Error al registrar Service Worker:', err));
+        });
+    }
+
+    let deferredPrompt = null;
+    const btnInstalar = document.getElementById('btnInstalar');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        
+        if (btnInstalar) {
+            btnInstalar.style.display = 'block';
+        }
+    });
+
+    if (btnInstalar) {
+        btnInstalar.addEventListener('click', async () => {
+            if (!deferredPrompt) return;
+            btnInstalar.style.display = 'none';
+            deferredPrompt.prompt();
+            
+            const choiceResult = await deferredPrompt.userChoice;
+            if (choiceResult.outcome === 'accepted') {
+                console.log('El usuario acepto instalar la PWA');
+            } else {
+                console.log('El usuario cancelo la instalacion');
+            }
+            deferredPrompt = null;
+        });
+    }
+</script>
 </body>
 </html>
