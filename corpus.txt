@@ -1,0 +1,158 @@
+[PREGUNTA]: ¿Cuáles son los métodos de pago disponibles?
+[RESPUESTA]: Aceptamos pagos en efectivo, transferencias bancarias nacionales y pago móvil a la tasa oficial del BCV. 💳
+[PREGUNTA]: ¿Cuáles son los datos para pago móvil?
+[RESPUESTA]: Banco: Bancrecer, Teléfono: 0422-1487574, RIF: R-141023736.
+[PREGUNTA]: ¿Cómo reporto un pago realizado?
+[RESPUESTA]: Puedes reportar tu pago de forma directa ingresando a nuestra plataforma web oficial en https://vconta-pro.web.app, adjuntando el búncher o comprobante en la sección de contacto, o enviándolo a través de nuestro número de WhatsApp para procesar tu activación o entrega de inmediato. 📲
+[PREGUNTA]: ¿Qué incluye el sistema administrativo V-Conta Pro?
+[RESPUESTA]: Incluye control de inventario A-Z, facturación multimoneda en dólares y bolívares, módulo POS y soporte técnico local. 🚀
+
+[PREGUNTA]: ¿Cómo puedo solicitar una demostración del sistema?
+[RESPUESTA]: Puedes escribirnos directamente a través de nuestro número de WhatsApp o hacer clic en el enlace de contacto en nuestra web. 📲
+
+[PREGUNTA]: ¿El sistema funciona sin conexión a internet?
+[RESPUESTA]: Sí, cuenta con una arquitectura local robusta en Windows con sincronización segura para garantizar operatividad continua. 💻
+
+[PREGUNTA]: ¿Ofrecen soporte técnico y asesoría presencial?
+[RESPUESTA]: Brindamos soporte técnico local y asesoría tecnológica e integral en Barcelona, Lechería y toda la zona oriental. 🛠️
+
+[PREGUNTA]: ¿Cómo calculan las tasas de cambio de divisas?
+[RESPUESTA]: Las conversiones se realizan de forma automática y transparente utilizando la tasa oficial actualizada del Banco Central de Venezuela (BCV). 📈
+
+[PREGUNTA]: ¿Qué costo tiene la instalación y configuración inicial?
+[RESPUESTA]: Contamos con tarifas especiales de lanzamiento e implementación inmediata desde la primera semana. Escríbenos para cotizar tu caso. 💵
+
+[PREGUNTA]: ¿Cómo se maneja el cierre de caja diario?
+[RESPUESTA]: El software realiza cuadres automáticos y exactos al centavo para evitar diferencias inexplicables y agilizar el trabajo de tus cajeros. ⏱️
+
+[PREGUNTA]: ¿Ofrecen servicios de asesoría legal y corporativa?
+[RESPUESTA]: Sí, unimos la tecnología con el derecho mercantil, corporativo y penal para ofrecerte un respaldo jurídico inquebrantable. ⚖️
+
+[PREGUNTA]: ¿Puedo supervisar varias sucursales desde un solo lugar?
+[RESPUESTA]: Nuestra plataforma multisede te permite centralizar el control administrativo y el inventario de todas tus sucursales en tiempo real. 🌐
+
+[PREGUNTA]: ¿Cómo se vincula la asesoría jurídica con el sistema V-Conta Pro?
+[RESPUESTA]: Ofrecemos un respaldo legal corporativo integrado que garantiza que cada factura, contrato y movimiento administrativo cumpla estrictamente con la legislación vigente. ⚖️
+
+[PREGUNTA]: ¿Qué aspectos del derecho mercantil cubre el servicio?
+[RESPUESTA]: Cubrimos constitución de empresas, redacción de actas de asamblea, contratos comerciales, fusiones y blindaje jurídico corporativo para proteger tu patrimonio. 🏛️
+
+[PREGUNTA]: ¿El sistema cumple con las normativas fiscales y legales de facturación?
+[RESPUESTA]: Sí, V-Conta Pro está diseñado bajo los estándares legales y tributarios requeridos para asegurar la plena validez fiscal de tus operaciones comerciales. 📋
+
+[PREGUNTA]: ¿Ofrecen defensa y asesoría en el área penal y laboral?
+[RESPUESTA]: Contamos con litigio especializado en derecho laboral y penal corporativo, resguardando los intereses de tu empresa ante cualquier eventualidad judicial. 🛡️
+
+[PREGUNTA]: ¿Cómo protegen los datos y la privacidad de mi empresa?
+[RESPUESTA]: Implementamos una arquitectura local robusta y cifrada, garantizando que la información confidencial de tu negocio permanezca segura y bajo tu total control. 🔒
+
+[PREGUNTA]: ¿Qué ventajas tiene unir tecnología y derecho en una sola asesoría?
+[RESPUESTA]: Obtienes una solución integral donde la automatización tecnológica y la seguridad jurídica trabajan juntas para impulsar y blindar tu modelo de negocio. 🚀
+
+[PREGUNTA]: ¿Cómo puedo emitir una factura?
+[RESPUESTA]: Ve al módulo POS o Facturación, ingresa los datos del cliente, selecciona los productos y haz clic en procesar pago. ¡Listo! 🧾
+
+[PREGUNTA]: ¿Dónde veo el reporte de ventas del día?
+[RESPUESTA]: En el menú principal, haz clic en Estadísticas o Reportes y selecciona la opción de ventas diarias. 📊
+
+[PREGUNTA]: ¿Cómo agrego un nuevo producto al inventario?
+[RESPUESTA]: Entra a Inventario, presiona el botón "Nuevo Producto", llena el nombre, precio y cantidad, y guarda los cambios. 📦
+
+[PREGUNTA]: ¿El sistema permite descuentos por producto?
+[RESPUESTA]: Sí, puedes aplicar porcentajes o montos de descuento directamente desde la pantalla de cobro antes de cerrar la factura. 🏷️
+
+[PREGUNTA]: ¿Cómo configuro la tasa del dólar del BCV?
+[RESPUESTA]: La tasa se actualiza automáticamente al conectar a internet, o puedes ingresarla de forma manual en la configuración general. 💵
+
+[PREGUNTA]: ¿Puedo buscar productos escaneando códigos de barras?
+[RESPUESTA]: ¡Claro que sí! Conecta tu lector de códigos de barras USB y el sistema agregará el artículo de inmediato. 📷
+
+[PREGUNTA]: ¿Cómo hago un respaldo de la base de datos?
+[RESPUESTA]: Ve a Configuración > Sistema > Copia de Seguridad y haz clic en "Exportar Respaldo" para guardar tus datos a salvo. 💾
+
+[PREGUNTA]: ¿Qué hago si un cliente me paga en bolívares en efectivo?
+[RESPUESTA]: Ingresas el monto en bolívares y el sistema calcula automáticamente el vuelto exacto en ambas monedas. 🧮
+
+[PREGUNTA]: ¿Se pueden anular facturas emitidas por error?
+[RESPUESTA]: Sí, con permisos de administrador puedes anular facturas y el inventario se reajustará de manera automática. 🔄
+
+[PREGUNTA]: ¿Cómo recupero mi contraseña de acceso?
+[RESPUESTA]: Haz clic en "¿Olvidaste tu contraseña?" en la pantalla de inicio de sesión o pídele al administrador principal que la restablezca. 🔑
+
+[PREGUNTA]: ¿Cuánto tiempo toma instalar el sistema?
+[RESPUESTA]: La instalación y configuración básica toma menos de 30 minutos para que comiences a trabajar de inmediato. ⏱️
+
+[PREGUNTA]: ¿Necesito impresoras especiales para los tickets?
+[RESPUESTA]: El sistema es compatible con la gran mayoría de impresoras térmicas USB y de red estándar del mercado. 🖨️
+
+[PREGUNTA]: ¿Puedo usar el sistema en varias computadoras?
+[RESPUESTA]: Sí, puedes configurarlo en red local para conectar múltiples cajas y terminales al mismo servidor central. 🌐
+
+[PREGUNTA]: ¿Cómo contacto al soporte técnico?
+[RESPUESTA]: Puedes comunicarte mediante nuestro número 04221487574, chat directo, WhatsApp o correo electrónico para asistencia inmediata. 📞
+
+[PREGUNTA]: ¿El sistema emite alertas de stock bajo?
+[RESPUESTA]: Sí, te avisa en pantalla cuando un producto está por agotarse para que puedas reabastecer a tiempo. ⚠️
+
+[PREGUNTA]: ¿Cómo hago para constituir mi empresa?
+[RESPUESTA]: Te asesoramos y redactamos todos los documentos legales necesarios, incluyendo el acta constitutiva y estatutos sociales, cumpliendo con el SENIAT y el Registro Mercantil. 🏢
+
+[PREGUNTA]: ¿Qué necesito para registrar una compañía anónima (C.A.) o firma personal?
+[RESPUESTA]: Necesitamos la reserva de denominación comercial, cédulas y RIF de los socios, la dirección fiscal y el capital social inicial para armar el expediente. 📋
+
+[PREGUNTA]: ¿Cuánto tiempo toma el proceso de constitución de una empresa?
+[RESPUESTA]: Una vez reunidos los recaudos y aprobada la reserva del nombre en el SAPI, el trámite ante el Registro Mercantil se completa de forma ágil y segura. ⏱️
+
+[PREGUNTA]: ¿Ofrecen asesoría para la obtención del RIF jurídico y licencias municipales?
+[RESPUESTA]: Sí, gestionamos tu inscripción en el SENIAT (RIF) y te asesoramos con los permisos municipales y bomberiles en la zona oriental. 🏛️
+
+[PREGUNTA]: ¿Dónde puedo ver o descargar el sistema V-Conta Pro?
+[RESPUESTA]: Puedes acceder directamente a nuestra plataforma web oficial en https://vconta-pro.web.app para conocer todas las funciones y solicitar tu acceso. 🌐
+
+[PREGUNTA]: ¿Cómo calcula el sistema el IVA en las facturas?
+[RESPUESTA]: El sistema aplica automáticamente la alícuota del IVA vigente a los productos gravados, generando el desglose fiscal exacto en cada factura. 📊
+
+[PREGUNTA]: ¿Cómo se manejan las retenciones de IGTF en pagos en divisas?
+[RESPUESTA]: V-Conta Pro calcula de forma transparente y automática el Impuesto a las Grandes Transacciones Financieras (IGTF) cuando se paga en moneda extranjera. 💵
+
+[PREGUNTA]: ¿Emiten reportes para las declaraciones fiscales ante el SENIAT?
+[RESPUESTA]: Sí, genera libros de compra y venta listos y ordenados para facilitar tus declaraciones mensuales y de IVA ante el SENIAT. 📋
+
+[PREGUNTA]: ¿Cómo se declaran y procesan los anticipos o retenciones de IVA?
+[RESPUESTA]: El sistema registra y totaliza los comprobantes de retención de clientes y proveedores para mantener tu contabilidad al día y sin errores. 🧮
+
+[PREGUNTA]: ¿Cómo se declara el IVA ante el SENIAT?
+[RESPUESTA]: Para declarar el IVA debes ingresar al portal del SENIAT con tu usuario, seleccionar Procesos Tributarios > Declaración de IVA, cargar los libros de compras y ventas, verificar el monto resultante y confirmar la declaración para generar la planilla VEP y tu comprobante. 📋
+
+[PREGUNTA]: ¿Cuáles son los pasos para declarar el impuesto al valor agregado?
+[RESPUESTA]: 1. Ingresar al portal oficial del SENIAT (Contribuyentes Ordinarios). 2. Ir a Procesos Tributarios > Declaración de IVA > Declaración y Pago. 3. Cargar las bases imponibles de ventas y compras junto con los créditos fiscales. 4. Validar el impuesto a pagar o el excedente. 5. Confirmar y descargar el comprobante y la planilla de pago VEP. 📄
+
+[PREGUNTA]: ¿Hola?
+[RESPUESTA]: ¡Bienvenido a Rojas Vconta Pro! 🤝 Somos tu aliado integral combinando la más alta tecnología administrativa (V-Conta Pro) y un sólido respaldo jurídico corporativo, mercantil y laboral en la zona oriental. ¿En qué podemos asesorarte hoy?
+
+[PREGUNTA]: ¿Libros contables?
+[RESPUESTA]: Los libros contables deben llevarse cronológicamente, sin tachaduras, en idioma castellano y reflejando fielmente todas las operaciones. Su importancia radica en que garantizan el cumplimiento legal y fiscal ante el SENIAT y ofrecen información exacta para la gestión financiera y el blindaje jurídico de tu empresa. 📚
+
+[PREGUNTA]: ¿Cómo se deben llevar los libros contables?
+[RESPUESTA]: Deben registrarse de forma cronológica, clara y ordenada, cumpliendo con las normativas del Código de Comercio y las leyes tributarias venezolanas, asegurando la integridad de los datos financieros. 📋
+
+[PREGUNTA]: ¿Cuál es la importancia de los libros contables?
+[RESPUESTA]: Son vitales porque proporcionan un historial financiero transparente, facilitan las auditorías, evitan sanciones fiscales y respaldan legalmente el patrimonio de la compañía. ⚖️
+
+[PREGUNTA]: ¿Cuáles son los libros obligatorios?
+[RESPUESTA]: Los libros obligatorios según el Código de Comercio son el Libro Diario, el Libro Mayor y el Libro de Inventarios, además de los libros de Compras y Ventas para efectos del IVA. 📊
+
+[PREGUNTA]: ¿Cuáles son los deberes formales de los contribuyentes ante el SENIAT?
+[RESPUESTA]: Los contribuyentes deben llevar los libros de contabilidad y registros especiales al día, emitir facturas y documentos equivalentes cumpliendo las providencias del SENIAT, presentar declaraciones oportunas y exhibir el RIF en un lugar visible. 📋
+
+[PREGUNTA]: ¿Cómo se sanciona el atraso en la declaración de impuestos?
+[RESPUESTA]: Según el Código Orgánico Tributario (COT), el retraso u omisión en la presentación de declaraciones se sanciona con multas pecuniarias calculadas en veces el tipo de cambio oficial de la moneda de mayor valor publicado por el BCV, además de los intereses moratorios correspondientes. ⚖️
+
+[PREGUNTA]: ¿Qué es un ilícito formal en materia tributaria?
+[RESPUESTA]: Son todas aquellas acciones u omisiones violatorias de las normas de índole formal establecidas en el Código Orgánico Tributario o leyes especiales, tales como no emitir facturas, no llevar libros obligatorios o no presentar declaraciones en los plazos legales. 🏛️
+
+[PREGUNTA]: ¿Cuál es la base legal de las retenciones de IVA?
+[RESPUESTA]: Se rigen por la Ley del Impuesto al Valor Agregado y sus providencias administrativas de agentes de retención, donde determinados contribuyentes (especiales) deben retener un porcentaje del IVA causado al momento del pago o abono en cuenta. 📊
+
+[PREGUNTA]: ¿Qué plazos existen para el pago de los tributos nacionales?
+[RESPUESTA]: Los plazos varían según el tipo de tributo y el calendario de sujetos pasivos especiales publicado anualmente por el SENIAT, generalmente estructurados por el último dígito del número de RIF. ⏱️
